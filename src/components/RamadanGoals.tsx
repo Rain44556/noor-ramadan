@@ -1,62 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import initialGoals from "@/src/data/goals.json";
 import GoalsCard from "./GoalsCard";
-import { Goals } from "../types/ramadan.types";
 import Image from "next/image";
 import goalImg from "../../public/images/ramadan-goals.jpg";
+import useRamadanGoalsLogic from "../services/useRamadanGoalsLogic"
+
 
 const RamadanGoals = () => {
-  const [activeWeek, setActiveWeek] = useState(1);
-
-  const [goals, setGoals] = useState<Goals[]>(() => {
-
-    if (typeof window !== "undefined") {
-      try {
-        const data = localStorage.getItem("ramadan-progress");
-        if (data) {
-          const parsed = JSON.parse(data);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            return parsed;
-          }
-        }
-      } catch (error) {
-        console.error("Invalid localstorage data:", error);
-      }
-    }
-
-    return initialGoals.map((goal) => ({
-      ...goal,
-      missionDone: false,
-      challengeDone: false,
-    }));
-  });
-
-  //for only saving data
-  useEffect(() => {
-    if (goals.length > 0) {
-      localStorage.setItem("ramadan-progress", JSON.stringify(goals));
-    }
-  }, [goals]);
-
-  // logic to filter goals based on the active week
-  const filteredGoals = goals.filter((goal) => {
-    const startDay = (activeWeek - 1) * 7 + 1;
-    const endDay = activeWeek * 7;
-    return goal.day >= startDay && goal.day <= endDay;
-  });
-
-  const handleToggle = (id: number, type: "mission" | "challenge") => {
-    setGoals((prev) =>
-      prev.map((goal) =>
-        goal.id === id
-          ? { ...goal, [`${type}Done`]: !goal[`${type}Done` as keyof Goals] }
-          : goal,
-      ),
-    );
-  };
-
+  const { activeWeek, setActiveWeek, filteredGoals, handleToggle } = useRamadanGoalsLogic();
+ 
   return (
     <main className="min-h-screen p-6 lg:p-12">
       <div className="max-w-7xl mx-auto">

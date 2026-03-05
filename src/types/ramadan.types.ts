@@ -17,7 +17,13 @@ export interface Goals {
   challengeDone: boolean;
 }
 
+export interface GoalProgress {
+  id: number;
+  missionDone: boolean;
+  challengeDone: boolean;
+}
 export interface GoalsCardProps {
     goal : Goals;
     onToggle: (id: number, type: 'mission' | 'challenge') => void;
 }
+
