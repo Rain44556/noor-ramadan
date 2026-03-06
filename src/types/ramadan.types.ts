@@ -27,3 +27,11 @@ export interface GoalsCardProps {
     onToggle: (id: number, type: 'mission' | 'challenge') => void;
 }
 
+
+export interface DuaVideo {
+  day: number;
+  videoId: string;
+  title: string;
+  arabicText?: string;
+  translation?: string;
+}

@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { EB_Garamond } from "next/font/google";
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
+        className={garamond.className}
       >
         {children}
       </body>

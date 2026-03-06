@@ -11,7 +11,7 @@ const RamadanGoals = () => {
  
   return (
     <main className="min-h-screen p-6 lg:p-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <header className="mb-10 text-center">
           <h1 className="text-4xl font-bold text-purple-300">Ramadan Goals</h1>
           <p className="text-purple-500 mt-2">

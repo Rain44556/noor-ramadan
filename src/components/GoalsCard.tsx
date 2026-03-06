@@ -2,11 +2,12 @@ import { GoalsCardProps } from "../types/ramadan.types";
 
 
 const GoalsCard = ({goal, onToggle} : GoalsCardProps) => {
+  
 const isCompleted = goal.missionDone && goal.challengeDone;
 
 return (
     <div 
-className={`flex flex-col gap-5 h-72 lg:w-48 p-4 rounded-xl border shadow-sm transition-all duration-300 transform
+className={`flex flex-col gap-5 h-72 lg:w-60 p-4 rounded-xl border shadow-sm transition-all duration-300 transform
   ${
     isCompleted
       ? "bg-gray-600 border-green-300 scale-105 shadow-lg"
@@ -18,10 +19,10 @@ className={`flex flex-col gap-5 h-72 lg:w-48 p-4 rounded-xl border shadow-sm tra
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-green-500" />
-          <span className="font-bold text-purple-300 text-xs">The Mission:</span>
+          <span className="font-bold text-purple-300 text-sm">The Mission:</span>
         </div>
         <p 
-        className="text-purple-300 text-xs leading-relaxed min-h-[40px]"
+        className="text-purple-300 text-sm leading-relaxed min-h-[40px]"
         >
           {goal.mission}
         </p>
@@ -39,9 +40,9 @@ className={`flex flex-col gap-5 h-72 lg:w-48 p-4 rounded-xl border shadow-sm tra
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-red-500" />
-          <span className="font-bold text-purple-300 text-xs">The Challenge:</span>
+          <span className="font-bold text-purple-300 text-sm">The Challenge:</span>
         </div>
-        <p className="text-purple-300 text-xs leading-relaxed min-h-[40px]">
+        <p className="text-purple-300 text-sm leading-relaxed min-h-[40px]">
           {goal.challenge}
         </p>
         <label className="flex items-center gap-2 cursor-pointer group w-fit">
