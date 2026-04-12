@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommonLayout = ({children} : {children: React.ReactNode}) => {
+const HomeLayout = ({children} : {children: React.ReactNode}) => {
     return (
         <div>
             {children}
@@ -8,4 +8,4 @@ const CommonLayout = ({children} : {children: React.ReactNode}) => {
     );
 };
 
-export default CommonLayout;
+export default HomeLayout;

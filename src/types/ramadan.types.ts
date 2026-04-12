@@ -1,11 +1,21 @@
-export interface Dates {
-    hijriYear: number;
-    day: number;
-    totalDays: number;
+export interface RamadanCountdown {
+  status: "active" | "countdown";
+  hijriYear: string;
+  timezoneOffset: number;
+  countdown: {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+  };
+  targetDate: string;
+  year: number;
+  day?: number;
+  totalDays?: number;
 }
 
 export interface countDownProps {
-    countDownData : Dates;
+  countDownData: RamadanCountdown;
 }
 
 export interface Goals {
@@ -35,3 +45,18 @@ export interface DuaVideo {
   arabicText?: string;
   translation?: string;
 }
+
+
+export type Ibadah = 
+  {
+    date: string;
+    fasting: boolean;
+    prayers: {
+      fajr: boolean;
+      dhuhr: boolean;
+      asr: boolean;
+      maghrib: boolean;
+      isha: boolean;
+    };
+    quran: boolean;
+  }
