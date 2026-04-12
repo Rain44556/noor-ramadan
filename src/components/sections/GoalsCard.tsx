@@ -1,6 +1,7 @@
 import { GoalsCardProps } from "../../types/ramadan.types";
 
 const GoalsCard = ({ goal, onToggle }: GoalsCardProps) => {
+  
   const isCompleted = goal.missionDone && goal.challengeDone;
   const halfDone = goal.missionDone || goal.challengeDone;
 
@@ -18,7 +19,6 @@ const GoalsCard = ({ goal, onToggle }: GoalsCardProps) => {
         }
       `}
     >
-      {/* Completion badge */}
       {isCompleted && (
         <div className="animate-check-pop absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
           <svg
@@ -32,8 +32,6 @@ const GoalsCard = ({ goal, onToggle }: GoalsCardProps) => {
           </svg>
         </div>
       )}
-
-      {/* Day label + mini progress dots */}
       <div className="flex items-center justify-between">
         <span
           className={`text-xs font-bold tracking-widest uppercase ${
@@ -55,8 +53,6 @@ const GoalsCard = ({ goal, onToggle }: GoalsCardProps) => {
           />
         </div>
       </div>
-
-      {/* Mission block */}
       <div className="flex-1 space-y-2.5">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-teal-400 shrink-0" />
@@ -110,10 +106,7 @@ const GoalsCard = ({ goal, onToggle }: GoalsCardProps) => {
         </button>
       </div>
 
-      {/* Divider */}
       <div className="h-px bg-white/5" />
-
-      {/* Challenge block */}
       <div className="flex-1 space-y-2.5">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />

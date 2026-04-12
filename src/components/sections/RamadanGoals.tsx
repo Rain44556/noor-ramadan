@@ -3,9 +3,8 @@
 import GoalsCard from "./GoalsCard";
 import useRamadanGoalsLogic from "../../services/ramadanGoalsLogic.service";
 
-const WEEK_LABELS = ["", "Repentance", "Devotion", "Gratitude", "Charity", "Reflection"];
-
 const RamadanGoals = () => {
+  const WEEK_LABELS = ["", "Repentance", "Devotion", "Gratitude", "Charity", "Reflection"];
   const { activeWeek, setActiveWeek, filteredGoals, handleToggle } =
     useRamadanGoalsLogic();
 
@@ -17,7 +16,6 @@ const RamadanGoals = () => {
 
   return (
     <section className="relative py-20 px-4 md:px-8 overflow-hidden">
-      {/* Ambient glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -26,11 +24,7 @@ const RamadanGoals = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Section header */}
         <div className="text-center mb-12 animate-fade-up">
-          <p className="text-xs tracking-[0.5em] text-teal-400 uppercase mb-3 font-medium">
-            يومياتك الروحية
-          </p>
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-light">
             Ramadan Goals
           </h2>
@@ -39,7 +33,6 @@ const RamadanGoals = () => {
           </p>
         </div>
 
-        {/* Week selector */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-8 flex-wrap animate-fade-up stagger-1">
           {[1, 2, 3, 4, 5].map((week) => (
             <button
@@ -59,11 +52,8 @@ const RamadanGoals = () => {
                 <span className="absolute inset-0 rounded-xl border border-amber-400/30" />
               )}
               <span className="relative flex items-center gap-1.5">
-                <span className="text-base">
-                  {["🌙", "⭐", "🤲", "💎", "✨"][week - 1]}
-                </span>
                 <span>
-                  Week {week}
+                  🌙 Week {week}
                   {WEEK_LABELS[week] && (
                     <span className="hidden md:inline text-xs opacity-60 ml-1">
                       · {WEEK_LABELS[week]}
@@ -75,7 +65,6 @@ const RamadanGoals = () => {
           ))}
         </div>
 
-        {/* Week progress bar */}
         <div className="max-w-md mx-auto mb-10 animate-fade-up stagger-2">
           <div className="flex justify-between items-center mb-2 text-xs text-slate-500">
             <span>
@@ -97,7 +86,6 @@ const RamadanGoals = () => {
           </div>
         </div>
 
-        {/* Goals grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredGoals.map((goal, idx) => (
             <div
@@ -109,7 +97,6 @@ const RamadanGoals = () => {
           ))}
         </div>
 
-        {/* Week completion celebration */}
         {weekProgressPct === 100 && totalCount > 0 && (
           <div className="mt-10 text-center animate-fade-up">
             <div className="inline-block glass-gold rounded-2xl px-8 py-5">

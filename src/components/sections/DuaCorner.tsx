@@ -1,25 +1,10 @@
+import {duas, dhikr} from "../../data/ibadat"
+
 const DuaCorner = () => {
   const videoId = "jcMHYZO5-_4";
 
-  const duas = [
-    { emoji: "🤲", text: "For the well-being and barakah in my parents' lives" },
-    { emoji: "🙏", text: "For forgiveness of my sins" },
-    { emoji: "💛", text: "For guidance and protection for my loved ones" },
-    { emoji: "🕊️", text: "For patience and peace in my heart" },
-    { emoji: "🌟", text: "For help to do good and avoid harm" },
-  ];
-
-  const dhikr = [
-    { arabic: "الله أكبر", latin: "Allahu Akbar", count: "×34" },
-    { arabic: "الحمد لله", latin: "Alhamdulillah", count: "×33" },
-    { arabic: "سبحان الله", latin: "Subhanallah", count: "×33" },
-    { arabic: "أستغفر الله", latin: "Astaghfirullah", count: "×33" },
-    { arabic: "لا إله إلا الله", latin: "La ilaha illallah", count: "×10" },
-  ];
-
   return (
     <section className="relative py-20 px-4 md:px-8 pb-32 overflow-hidden">
-      {/* Ambient glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -29,11 +14,7 @@ const DuaCorner = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Section header */}
         <div className="text-center mb-14 animate-fade-up">
-          <p className="text-xs tracking-[0.5em] text-teal-400 uppercase mb-3 font-medium">
-            نور الدعاء
-          </p>
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-light">
             Noor e Dua
           </h2>
@@ -43,9 +24,7 @@ const DuaCorner = () => {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8">
-          {/* Left column: Duas + Dhikr */}
           <div className="lg:col-span-5 space-y-6 animate-fade-up stagger-1">
-            {/* Duas card */}
             <div className="glass rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-lg">🤍</span>
@@ -59,14 +38,12 @@ const DuaCorner = () => {
                     key={i}
                     className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed"
                   >
-                    <span className="text-base shrink-0 mt-0.5">{dua.emoji}</span>
+                    <span className="text-base shrink-0 mt-0.5">🤲</span>
                     <span>{dua.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Dhikr card */}
             <div className="glass-teal rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-lg">📿</span>
@@ -94,8 +71,6 @@ const DuaCorner = () => {
               </div>
             </div>
           </div>
-
-          {/* Right column: Video */}
           <div className="lg:col-span-7 animate-fade-up stagger-2">
             <div className="glass rounded-3xl overflow-hidden shadow-2xl">
               {/* Video header */}
@@ -114,8 +89,6 @@ const DuaCorner = () => {
                   <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
                 </div>
               </div>
-
-              {/* Iframe */}
               <div className="aspect-video">
                 <iframe
                   width="100%"
@@ -127,8 +100,6 @@ const DuaCorner = () => {
                   allowFullScreen
                 />
               </div>
-
-              {/* Video footer */}
               <div className="px-5 py-4 flex items-center justify-between">
                 <p className="text-xs text-slate-600 font-arabic">
                   بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
@@ -146,8 +117,6 @@ const DuaCorner = () => {
                 </a>
               </div>
             </div>
-
-            {/* Quran verse card */}
             <div className="glass-gold rounded-2xl p-6 mt-6">
               <p className="text-right font-arabic text-xl text-amber-200 leading-loose mb-3">
                 وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ
@@ -163,11 +132,6 @@ const DuaCorner = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer note */}
-      <p className="text-center text-xs text-slate-600 mt-20">
-        Made with 🤍 for the love of Ramadan — may Allah accept our worship.
-      </p>
     </section>
   );
 };
